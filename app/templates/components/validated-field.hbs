@@ -1,10 +1,11 @@
 {{input
   type=type
   value=value
-  placeholder=placeholder
-  class=(if (or validationError serverValidationError) "has-error")}}
+  name=valuePath
+  placeholder=placeholder}}
 
-<span class="validation-error">
-  {{validationError}}
-  {{serverValidationError}}
-</span>
+{{#if showErrorMessage}}
+  <span class="validation-error">
+    {{v-get model valuePath 'message'}}
+  </span>
+{{/if}}

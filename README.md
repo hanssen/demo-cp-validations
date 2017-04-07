@@ -54,7 +54,7 @@ Failing requirements 1, 3, 5.
 1. Click _Add User_ -> validation errors appear immediately (failing requirement 1, 3)
 1. Click _Edit_ for user _Test_ -> validation error appears immediately (fulfilling requirement 4)
 
-### Advanced Validation (Tag: 3-advanced-validation)
+### Advanced Validation - Version A (Tag: 3-advanced-validation)
 
 Show validations via components `validationError` attribute, shadowing the plugin results. This attribute will be 
 updated by:
@@ -70,6 +70,7 @@ Failing requirement 5
 1. Check out git tag `3-advanced-validation`
 1. Click _Add User_ -> validation errors do **not** appear (fulfilling requirement 1)
 1. Click _Save_ -> validation errors appear (fulfilling requirement 3)
+1. Click _Edit_ for user _Test_ -> validation error appears immediately (fulfilling requirement 4)
 
 ### Advanced Validation + Server Errors (Tag: 4-server-validation)
 
@@ -80,6 +81,23 @@ The "backend server" is configured to send random validation errors. The random 
 `/server/index.js` by changing `randomErrors`.
 
 Fulfilling all requirements.
+
+### Advanced Validation - Version B (Tag: 5-advanced-validation-b)
+
+Based on example at https://offirgolan.github.io/ember-cp-validations/ 
+([full code](https://github.com/offirgolan/ember-cp-validations/tree/master/tests/dummy))
+
+* Better approach: no observers or watches only computed properties
+* Still need to set a flag in _new_ controller: `this.set('didValidate', true)`
+
+Failing requirement 5
+
+#### Test
+
+1. Check out git tag `3-advanced-validation`
+1. Click _Add User_ -> validation errors do **not** appear (fulfilling requirement 1)
+1. Click _Save_ -> validation errors appear (fulfilling requirement 3)
+1. Click _Edit_ for user _Test_ -> validation error appears immediately (fulfilling requirement 4)
 
 #### Test
 

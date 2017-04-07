@@ -1,7 +1,7 @@
 import { buildValidations, validator } from 'ember-cp-validations';
 
 const
-  debounceDelay = 500,
+  debounceDelay = Ember.computed.alias('model.debounceDelay'),
   Validations = buildValidations({
     name: [
       validator('presence', {

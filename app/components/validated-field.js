@@ -1,33 +1,41 @@
 import Ember from 'ember';
 
+const {
+  computed,
+  defineProperty
+} = Ember;
+
 export default Ember.Component.extend({
-  didRender() {
-    // show initial validation errors for edit form
-    if (!this.get('model').get('isNew')) {
-      this.set('validationError', this.get('validation'));
-    }
+  classNameBindings: ['showErrorClass:has-error', 'isValid:has-success'],
+  model: null,
+  value: null,
+  type: 'text',
+  valuePath: '',
+  placeholder: '',
+  validation: null,
+  showValidations: false,
+  didValidate: false,
+  debounceTimer: null,
+
+  notValidating: computed.not('validation.isValidating').readOnly(),
+  hasContent: computed.notEmpty('value').readOnly(),
+  isValid: computed.and('hasContent', 'validation.isTruelyValid').readOnly(),
+  shouldDisplayValidations: computed.or('showValidations', 'didValidate', 'hasContent').readOnly(),
+
+  showErrorClass: computed.and('notValidating', 'showErrorMessage', 'validation').readOnly(),
+  showErrorMessage: computed.and('shouldDisplayValidations', 'validation.isInvalid').readOnly(),
+
+  init() {
+    this._super(...arguments);
+    let valuePath = this.get('valuePath');
+
+    defineProperty(this, 'validation', computed.readOnly(`model.validations.attrs.${valuePath}`));
+    defineProperty(this, 'value', computed.alias(`model.${valuePath}`));
   },
 
-  /**
-   * Observe validation information for attribute and models revalidate trigger
-   *
-   * The `validation` is set via component parameter to V-Get Helper Module message of current attribute.
-   * The `model.revalidate` will be updated by `new` route, when manual save attempt failed due validation error.
-   */
-  observeValidationError: Ember.observer('validation', 'model.revalidate', function() {
-    this.set('validationError', this.get('validation'));
-  }),
-
-  /**
-   * Watch adapter errors and show server validation errors identical as client validation errors
-   */
-  serverValidationError: function() {
-    const
-      model = this.get('model'),
-      attrName = this.get('attrName'),
-      errors = model.get('errors').errorsFor(attrName),
-      errorMessages = errors.map(error => error.message).join(', ');
-
-    return errors ? errorMessages : false;
-  }.property('model.errors.[]')
+  keyDown() {
+    this._super(...arguments);
+    this.set('showValidations', true);
+    this.get('model').set('debounceDelay', 3000);
+  }
 });

@@ -10,7 +10,7 @@ function getError() {
 }
 
 const
-  randomErrors = 0.7, // percent as 0.0 - 1.0
+  randomErrors = 0, // percent as 0.0 - 1.0
 
   bodyParser = require('body-parser'),
   fs = require('fs'),

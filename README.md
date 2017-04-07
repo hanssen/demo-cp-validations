@@ -3,6 +3,14 @@
 This project intends to show my approach to use the 
 [ember-cp-validations](https://github.com/offirgolan/ember-cp-validations) plugin.
 
+This project is a simple user administration tool, where you can create, list, update and delete users.
+
+A user has three attributes with individual validations:
+
+* Name (presence, length) 
+* E-Mail (presence, format)
+* Password (presence, length)
+
 A Node.js Express server is used to serve user data and generate random backend validation errors. Saving data is not 
 implemented, session data will be lost after page reload.
 
@@ -22,18 +30,15 @@ errors
 
 I created different Versions with Git Tags to show my progress and different approaches with different complexity.
 
-This project is a simple user administration tool, where you can add, list, update and delete users. A user has three 
-attributes with individual validations:
-
-* Name (presence, length) 
-* E-Mail (presence, format)
-* Password (presence, length)
-
 ### No Validation
 
 Simple interface without any validation.
 
 Failing all requirements.
+
+#### Test 
+
+Create and update users -> no validation is active.
 
 ### Default Validation
 
@@ -41,6 +46,11 @@ Implementation very close to suggestion at bottom of
 [ember-cp-validations/docs](http://offirgolan.github.io/ember-cp-validations/docs/modules/V-Get%20Helper.html).
 
 Failing requirements 1, 3, 5.
+
+#### Test
+
+* Click _Add User_ -> validation errors appear immediatly (failing requirement 1, 3)
+* Click _Edit_ for user _Test_ -> validation error appears immediatly (fulfilling requirement 4)
 
 ### Advanced Validation
 
@@ -53,6 +63,11 @@ updated by:
 
 Failing requirement 5
 
+#### Test
+
+1. Click _Add User_ -> validation errors do **not** appear (fulfilling requirement 1)
+2. Click _Save_ -> validation errors appear (fulfilling requirement 3)
+
 ### Advanced Validation + Server Errors
 
 Show server validation errors by watching `model.errors.[]` which is updated by adapter and use serverValidationError
@@ -62,6 +77,13 @@ The "backend server" is configured to send random validation errors. The random 
 `/server/index.js` by changing `randomErrors`.
 
 Fulfilling all requirements.
+
+#### Test
+
+1. Edit user _Alice_ and click _Save_ -> validation error(s) _might_ appear (repeat several times or set "random error 
+ratio" to 1.0 as described above)
+1. Repeat until validation errror(s) appeared
+1. Repeat until save was succesful appeared
 
 ## Prerequisites
 

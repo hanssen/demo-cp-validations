@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { buildValidations, validator } from 'ember-cp-validations';
 
 const

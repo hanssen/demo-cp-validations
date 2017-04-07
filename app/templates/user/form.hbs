@@ -1,19 +1,25 @@
-{{input
+{{validated-field
   type="text"
+  model=model
   value=model.name
-  placeholder="Name"}}<br />
+  attrName="name"
+  placeholder="Name"}}
 
-{{input
+{{validated-field
   type="text"
+  model=model
   value=model.eMail
-  placeholder="E-Mail"}}<br />
+  attrName="eMail"
+  placeholder="E-Mail"}}
 
-{{input
+{{validated-field
   type="password"
+  model=model
   value=model.password
-  placeholder="Password"}}<br />
+  attrName="password"
+  placeholder="Password"}}
 
-<button {{action "save" model}} class="top-margin btn-save">
+<button {{action "save" model}} class="top-margin btn-save {{if (not (v-get model "isValid")) "disabled"}}">
   Save
 </button>
 

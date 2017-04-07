@@ -7,7 +7,11 @@ export default Ember.Route.extend({
 
   actions: {
     save(user) {
-      user.save().then(() => this.transitionTo('user.index'));
+      user.validate().then(({ validations }) => {
+        if (validations.get('isValid')) {
+          user.save().then(() => this.transitionTo('user.index'));
+        }
+      });
     }
   }
 });

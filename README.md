@@ -35,6 +35,13 @@ Simple interface without any validation.
 
 Failing all requirements.
 
+### Default Validation
+
+Implementation very close to suggestion at bottom of 
+[ember-cp-validations/docs](http://offirgolan.github.io/ember-cp-validations/docs/modules/V-Get%20Helper.html).
+
+Failing requirements 1, 3, 5.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.

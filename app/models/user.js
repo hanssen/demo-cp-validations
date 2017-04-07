@@ -1,7 +1,10 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-  eMail: DS.attr('string'),
-  password: DS.attr('string')
+import Validations from '../validations/user-validation';
+
+export default DS.Model.extend(
+  Validations, {
+    name: DS.attr('string'),
+    eMail: DS.attr('string'),
+    password: DS.attr('string')
 });

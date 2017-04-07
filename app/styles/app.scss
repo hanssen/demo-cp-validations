@@ -51,6 +51,16 @@ button:visited {
 input {
   margin: 4px 0;
   padding: 4px 8px;
+
+  &.has-error {
+    border-color: indianred;
+  }
+}
+
+.validation-error {
+  color: indianred;
+  font-size: 12px;
+  margin-left: 6px;
 }
 
 .top-margin {

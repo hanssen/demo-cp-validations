@@ -30,7 +30,7 @@ errors
 
 I created different Versions with Git Tags to show my progress and different approaches with different complexity.
 
-### No Validation
+### No Validation (Tag: 1-no-validation)
 
 Simple interface without any validation.
 
@@ -38,9 +38,10 @@ Failing all requirements.
 
 #### Test 
 
-* Create and update users -> no validation is active.
+1. Check out git tag `1-no-validation` 
+1. Create and update users -> no validation is active.
 
-### Default Validation
+### Default Validation (Tag: 2-default-validation)
 
 Implementation very close to suggestion at bottom of 
 [ember-cp-validations/docs](http://offirgolan.github.io/ember-cp-validations/docs/modules/V-Get%20Helper.html).
@@ -49,10 +50,11 @@ Failing requirements 1, 3, 5.
 
 #### Test
 
-* Click _Add User_ -> validation errors appear immediately (failing requirement 1, 3)
-* Click _Edit_ for user _Test_ -> validation error appears immediately (fulfilling requirement 4)
+1. Check out git tag `2-default-validation`
+1. Click _Add User_ -> validation errors appear immediately (failing requirement 1, 3)
+1. Click _Edit_ for user _Test_ -> validation error appears immediately (fulfilling requirement 4)
 
-### Advanced Validation
+### Advanced Validation (Tag: 3-advanced-validation)
 
 Show validations via components `validationError` attribute, shadowing the plugin results. This attribute will be 
 updated by:
@@ -65,10 +67,11 @@ Failing requirement 5
 
 #### Test
 
+1. Check out git tag `3-advanced-validation`
 1. Click _Add User_ -> validation errors do **not** appear (fulfilling requirement 1)
-2. Click _Save_ -> validation errors appear (fulfilling requirement 3)
+1. Click _Save_ -> validation errors appear (fulfilling requirement 3)
 
-### Advanced Validation + Server Errors
+### Advanced Validation + Server Errors (Tag: 4-server-validation)
 
 Show server validation errors by watching `model.errors.[]` which is updated by adapter and use serverValidationError
 function in component to render these errors into template.
@@ -80,6 +83,7 @@ Fulfilling all requirements.
 
 #### Test
 
+1. Check out git tag `4-server-validation`
 1. Edit user _Alice_ and click _Save_ -> validation error(s) _might_ appear (repeat several times or set "random error 
 ratio" to 1.0 as described above)
 1. Repeat until validation errror(s) appeared

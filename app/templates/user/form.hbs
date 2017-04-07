@@ -1,0 +1,20 @@
+{{input
+  type="text"
+  value=model.name
+  placeholder="Name"}}<br />
+
+{{input
+  type="text"
+  value=model.eMail
+  placeholder="E-Mail"}}<br />
+
+{{input
+  type="password"
+  value=model.password
+  placeholder="Password"}}<br />
+
+<button {{action "save" model}} class="top-margin btn-save">
+  Save
+</button>
+
+<br />

@@ -1,0 +1,76 @@
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+}
+
+table {
+  border-spacing: 0;
+
+  th, td {
+    border-bottom: 1px solid;
+    margin: 0;
+    padding: 4px 12px;
+  }
+}
+
+a,
+button,
+input {
+  background: #fff;
+  border: 1px solid silver;
+  border-radius: 4px;
+  line-height: 16px;
+  padding: 4px 16px;
+  text-decoration: none;
+}
+
+a,
+button,
+a:active,
+button:active,
+a:visited,
+button:visited {
+  background: #e2e2e2;
+  color: #000;
+
+  &.btn-save {
+    background: darkseagreen;
+    &.disabled {
+      background: #b0dfb0;
+      color: #8a8a8a;
+      cursor: not-allowed;
+    }
+  }
+
+  &.btn-delete {
+    background: indianred;
+    color: #fff;
+  }
+}
+
+input {
+  margin: 4px 0;
+  padding: 4px 8px;
+}
+
+.top-margin {
+  display: inline-block;
+  margin-top: 16px;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+  -webkit-appearance: none;
+  outline: 0 !important;
+}

@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "type": "user",
+      "id": 1,
+      "attributes": {
+        "name": "Alice",
+        "e-mail": "admin@foobar.com",
+        "password": "aaaaaaaa"
+      }
+    },
+
+    {
+      "type": "user",
+      "id": 2,
+      "attributes": {
+        "e-mail": "invalid E-Mail address",
+        "name": "Test",
+        "password": "testtest"
+      }
+    }
+  ]
+}

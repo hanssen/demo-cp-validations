@@ -53,6 +53,16 @@ updated by:
 
 Failing requirement 5
 
+### Advanced Validation + Server Errors
+
+Show server validation errors by watching `model.errors.[]` which is updated by adapter and use serverValidationError
+function in component to render these errors into template.
+
+The "backend server" is configured to send random validation errors. The random error ratio can be adjusted in 
+`/server/index.js` by changing `randomErrors`.
+
+Fulfilling all requirements.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.

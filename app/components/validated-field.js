@@ -16,5 +16,18 @@ export default Ember.Component.extend({
    */
   observeValidationError: Ember.observer('validation', 'model.revalidate', function() {
     this.set('validationError', this.get('validation'));
-  })
+  }),
+
+  /**
+   * Watch adapter errors and show server validation errors identical as client validation errors
+   */
+  serverValidationError: function() {
+    const
+      model = this.get('model'),
+      attrName = this.get('attrName'),
+      errors = model.get('errors').errorsFor(attrName),
+      errorMessages = errors.map(error => error.message).join(', ');
+
+    return errors ? errorMessages : false;
+  }.property('model.errors.[]')
 });

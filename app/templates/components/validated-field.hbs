@@ -2,8 +2,9 @@
   type=type
   value=value
   placeholder=placeholder
-  class=(if validationError "has-error")}}
+  class=(if (or validationError serverValidationError) "has-error")}}
 
 <span class="validation-error">
   {{validationError}}
+  {{serverValidationError}}
 </span>

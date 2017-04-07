@@ -42,6 +42,17 @@ Implementation very close to suggestion at bottom of
 
 Failing requirements 1, 3, 5.
 
+### Advanced Validation
+
+Show validations via components `validationError` attribute, shadowing the plugin results. This attribute will be 
+updated by:
+
+* `didRender` hook to show initial validation errors on new form. 
+* Observer on "V-Get Helper Module message" of current attribute 
+* Observer on model `revalidation` flag, which is triggered on failed validation in _new_ route.
+
+Failing requirement 5
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.

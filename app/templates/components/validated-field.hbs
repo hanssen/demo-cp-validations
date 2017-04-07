@@ -2,8 +2,8 @@
   type=type
   value=value
   placeholder=placeholder
-  class=(if (not (v-get model attrName "isValid")) "has-error")}}
+  class=(if validationError "has-error")}}
 
 <span class="validation-error">
-  {{v-get model attrName "message"}}
+  {{validationError}}
 </span>

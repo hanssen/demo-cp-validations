@@ -2,21 +2,21 @@
   type="text"
   model=model
   value=model.name
-  attrName="name"
+  validation=(v-get model "name" "message")
   placeholder="Name"}}
 
 {{validated-field
   type="text"
   model=model
   value=model.eMail
-  attrName="eMail"
+  validation=(v-get model "eMail" "message")
   placeholder="E-Mail"}}
 
 {{validated-field
   type="password"
   model=model
   value=model.password
-  attrName="password"
+  validation=(v-get model "password" "message")
   placeholder="Password"}}
 
 <button {{action "save" model}} class="top-margin btn-save {{if (not (v-get model "isValid")) "disabled"}}">

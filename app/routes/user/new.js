@@ -10,6 +10,8 @@ export default Ember.Route.extend({
       user.validate().then(({ validations }) => {
         if (validations.get('isValid')) {
           user.save().then(() => this.transitionTo('user.index'));
+        } else {
+          user.set('revalidate', Date.now());
         }
       });
     },

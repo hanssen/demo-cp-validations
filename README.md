@@ -38,7 +38,7 @@ Failing all requirements.
 
 #### Test 
 
-Create and update users -> no validation is active.
+* Create and update users -> no validation is active.
 
 ### Default Validation
 
@@ -49,8 +49,8 @@ Failing requirements 1, 3, 5.
 
 #### Test
 
-* Click _Add User_ -> validation errors appear immediatly (failing requirement 1, 3)
-* Click _Edit_ for user _Test_ -> validation error appears immediatly (fulfilling requirement 4)
+* Click _Add User_ -> validation errors appear immediately (failing requirement 1, 3)
+* Click _Edit_ for user _Test_ -> validation error appears immediately (fulfilling requirement 4)
 
 ### Advanced Validation
 

@@ -1,5 +1,4 @@
 import DS from 'ember-data';
-
 import Validations from '../validations/user-validation';
 
 export default DS.Model.extend(

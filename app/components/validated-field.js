@@ -36,6 +36,6 @@ export default Ember.Component.extend({
   keyDown() {
     this._super(...arguments);
     this.set('showValidations', true);
-    this.get('model').set('debounceDelay', 3000);
+    this.get('model').set('debounceDelay', 800);
   }
 });

@@ -52,12 +52,12 @@ input {
   margin: 4px 0;
   padding: 4px 8px;
 
-  .has-error & {
-    border-color: indianred;
-  }
-
   .has-success & {
     border-color: darkseagreen;
+  }
+
+  .has-error & {
+    border-color: indianred;
   }
 }
 

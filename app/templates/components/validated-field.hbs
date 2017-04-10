@@ -7,5 +7,11 @@
 {{#if showErrorMessage}}
   <span class="validation-error">
     {{v-get model valuePath 'message'}}
+
+    {{#if showApiErrorMessage}}
+      {{#each apiErrors as |error|}}
+        {{error.message}}
+      {{/each}}
+    {{/if}}
   </span>
 {{/if}}

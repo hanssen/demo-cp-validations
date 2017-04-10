@@ -107,6 +107,24 @@ Failing requirement 5
 1. Click _Save_ -> validation errors appear (fulfilling requirement 3)
 1. Click _Edit_ for user _Test_ -> validation error appears immediately (fulfilling requirement 4)
 
+### Advanced Validation + Server Errors - Version B (Tag: 6-server-validation-b)
+
+Show server validation errors by watching `model.errors.[]` which is updated by adapter and use serverValidationError
+function in component to render these errors into template.
+
+The "backend server" is configured to send random validation errors. The random error ratio can be adjusted in 
+`/server/index.js` by changing `randomErrors`.
+
+Fulfilling all requirements.
+
+#### Test
+
+1. Check out git tag `6-server-validation-b`
+1. Edit user _Alice_ and click _Save_ -> validation error(s) _might_ appear (repeat several times or set "random error 
+ratio" to 1.0 as described above)
+1. Repeat until validation errror(s) appeared
+1. Repeat until save was succesful appeared
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.

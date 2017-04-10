@@ -10,7 +10,10 @@ export default Ember.Route.extend({
       user.set('debounceDelay', 0);
       user.validate().then(({ validations }) => {
         if (validations.get('isValid')) {
-          user.save().then(() => this.transitionTo('user.index'));
+          user.save().then(
+            () => this.transitionTo('user.index'),
+            () => console.log('server validation failed')
+          );
         }
       });
     },

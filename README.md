@@ -82,6 +82,14 @@ The "backend server" is configured to send random validation errors. The random 
 
 Fulfilling all requirements.
 
+#### Test
+
+1. Check out git tag `4-server-validation`
+1. Edit user _Alice_ and click _Save_ -> validation error(s) _might_ appear (repeat several times or set "random error 
+ratio" to 1.0 as described above)
+1. Repeat until validation errror(s) appeared
+1. Repeat until save was succesful appeared
+
 ### Advanced Validation - Version B (Tag: 5-advanced-validation-b)
 
 Based on example at https://offirgolan.github.io/ember-cp-validations/ 
@@ -94,18 +102,10 @@ Failing requirement 5
 
 #### Test
 
-1. Check out git tag `3-advanced-validation`
+1. Check out git tag `5-advanced-validation-b`
 1. Click _Add User_ -> validation errors do **not** appear (fulfilling requirement 1)
 1. Click _Save_ -> validation errors appear (fulfilling requirement 3)
 1. Click _Edit_ for user _Test_ -> validation error appears immediately (fulfilling requirement 4)
-
-#### Test
-
-1. Check out git tag `4-server-validation`
-1. Edit user _Alice_ and click _Save_ -> validation error(s) _might_ appear (repeat several times or set "random error 
-ratio" to 1.0 as described above)
-1. Repeat until validation errror(s) appeared
-1. Repeat until save was succesful appeared
 
 ## Prerequisites
 

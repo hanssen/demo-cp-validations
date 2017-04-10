@@ -1,7 +1,7 @@
 {{validated-field
   type="text"
   model=model
-  value=model.name
+  value=data.name
   valuePath="name"
   didValidate=didValidate
   placeholder="Name"}}
@@ -9,7 +9,7 @@
 {{validated-field
   type="text"
   model=model
-  value=model.eMail
+  value=data.eMail
   valuePath="eMail"
   didValidate=didValidate
   placeholder="E-Mail"}}
@@ -17,12 +17,12 @@
 {{validated-field
   type="password"
   model=model
-  value=model.password
+  value=data.password
   valuePath="password"
   didValidate=didValidate
   placeholder="Password"}}
 
-<button {{action "save" model}} class="top-margin btn-save {{if (not (v-get model "isValid")) "disabled"}}">
+<button {{action "save"}} class="top-margin btn-save {{if (not (v-get model "isValid")) "disabled"}}">
   Save
 </button>
 

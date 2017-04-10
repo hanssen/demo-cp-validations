@@ -13,7 +13,8 @@ const
         min: 3,
         max: 30,
         debounce: debounceDelay
-      })
+      }),
+      validator('ds-error')
     ],
 
     eMail: [
@@ -24,7 +25,8 @@ const
       validator('format', {
         type: 'email',
         debounce: debounceDelay
-      })
+      }),
+      validator('ds-error')
     ],
 
     password: [
@@ -36,7 +38,8 @@ const
         min: 8,
         max: 30,
         debounce: debounceDelay
-      })
+      }),
+      validator('ds-error')
     ]
   });
 

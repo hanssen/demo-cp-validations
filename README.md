@@ -125,6 +125,24 @@ ratio" to 1.0 as described above)
 1. Repeat until validation errror(s) appeared
 1. Repeat until save was succesful appeared
 
+### Advanced Validation + Server Errors - Version C (Tag: 7-server-validation-c)
+
+Show server validation with [`ds-error`](http://offirgolan.github.io/ember-cp-validations/docs/classes/DS%20Error.html) 
+validator.
+
+The "backend server" is configured to send random validation errors. The random error ratio can be adjusted in 
+`/server/index.js` by changing `randomErrors`.
+
+Fulfilling all requirements.
+
+#### Test
+
+1. Check out git tag `7-server-validation-c`
+1. Edit user _Alice_ and click _Save_ -> validation error(s) _might_ appear (repeat several times or set "random error 
+ratio" to 1.0 as described above)
+1. Repeat until validation errror(s) appeared
+1. Repeat until save was succesful appeared
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
